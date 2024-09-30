@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "94ddfdf3-f1a4-438d-bcda-3b83602da608",
+		"name": "Resume_APIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28559401"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"tooba\",\r\n    \"email\": \"tooba@gmail.com\",\r\n    \"password\": \"123456\"\r\n    // \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tooba@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Update-password-api",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"currentPassword\": \"12345\",\r\n  \"newPassword\": \"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/update-password/66eeeeefcc74d78fe02c348d"
+					},
+					"response": []
+				},
+				{
+					"name": "Forget-password-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"professionalwebdeveloper123@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/forget-password"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"hassan123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVkZWQ0NGMzYzMwZjU2Y2UzNWM0ZmMiLCJlbWFpbCI6InByb2Zlc3Npb25hbHdlYmRldmVsb3BlcjEyM0BnbWFpbC5jb20iLCJpYXQiOjE3MjY5MzUyNzcsImV4cCI6MTcyNjkzODg3N30.EX5Nekkbj8vcrdwmif7pC-s3FSnoPge0phGler9iDj0"
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/get-all-users"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles and Permissions",
+			"item": [
+				{
+					"name": "Create-role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/create-role"
+					},
+					"response": []
+				},
+				{
+					"name": "assign-role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"66ef4e2f3571d7e612280605\",\r\n  \"roleId\": \"66ef36b55b1501c5b70f5200\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/assign-role"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resume_APIS",
+			"item": [
+				{
+					"name": "Create-resume",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmNGUyZjM1NzFkN2U2MTIyODA2MDUiLCJlbWFpbCI6InRvb2JhQGdtYWlsLmNvbSIsInJvbGUiOiI2NmVmMzZiNTViMTUwMWM1YjcwZjUyMDAiLCJpYXQiOjE3MjY5NTkxODYsImV4cCI6MTcyNzAxMzE4Nn0.uL6pYwmBFqG09K131e30eUIGQ0KFaUSNezqWChCvSD0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateName\": \"Ali Raza\",\r\n    \"email\": \"ali@example.com\",\r\n    \"phone\": \"0300-1234567\",\r\n    \"experience\": \"3 years\",\r\n    \"education\": \"Bachelors\",\r\n    \"skills\": [\r\n        \"JavaScript\",\r\n        \"Node.js\",\r\n        \"React\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/create-resume"
+					},
+					"response": []
+				},
+				{
+					"name": "Get-all-resume",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmNGUyZjM1NzFkN2U2MTIyODA2MDUiLCJlbWFpbCI6InRvb2JhQGdtYWlsLmNvbSIsInJvbGUiOiI2NmVmMzZiNTViMTUwMWM1YjcwZjUyMDAiLCJpYXQiOjE3MjY5NTkxODYsImV4cCI6MTcyNzAxMzE4Nn0.uL6pYwmBFqG09K131e30eUIGQ0KFaUSNezqWChCvSD0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateName\": \"Ali Raza\",\r\n    \"email\": \"ali@example.com\",\r\n    \"phone\": \"0300-1234567\",\r\n    \"experience\": \"3 years\",\r\n    \"education\": \"Bachelors\",\r\n    \"skills\": [\r\n        \"JavaScript\",\r\n        \"Node.js\",\r\n        \"React\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/get-all-resume"
+					},
+					"response": []
+				},
+				{
+					"name": "Update-resume",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmNGUyZjM1NzFkN2U2MTIyODA2MDUiLCJlbWFpbCI6InRvb2JhQGdtYWlsLmNvbSIsInJvbGUiOiI2NmVmMzZiNTViMTUwMWM1YjcwZjUyMDAiLCJpYXQiOjE3MjY5NTkxODYsImV4cCI6MTcyNzAxMzE4Nn0.uL6pYwmBFqG09K131e30eUIGQ0KFaUSNezqWChCvSD0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateName\": \"hassan\",\r\n    \"email\": \"ali@example.com\",\r\n    \"phone\": \"0300-1234567\",\r\n    \"experience\": \"3 years\",\r\n    \"education\": \"Bachelors\",\r\n    \"skills\": [\r\n        \"JavaScript\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/update-resume/66ef465d3571d7e6122805eb"
+					},
+					"response": []
+				},
+				{
+					"name": "Update-resume Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmVmNGUyZjM1NzFkN2U2MTIyODA2MDUiLCJlbWFpbCI6InRvb2JhQGdtYWlsLmNvbSIsInJvbGUiOiI2NmVmMzZiNTViMTUwMWM1YjcwZjUyMDAiLCJpYXQiOjE3MjY5NTkxODYsImV4cCI6MTcyNzAxMzE4Nn0.uL6pYwmBFqG09K131e30eUIGQ0KFaUSNezqWChCvSD0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateName\": \"hassan\",\r\n    \"email\": \"ali@example.com\",\r\n    \"phone\": \"0300-1234567\",\r\n    \"experience\": \"3 years\",\r\n    \"education\": \"Bachelors\",\r\n    \"skills\": [\r\n        \"JavaScript\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/delete-resume/66ef4e2f3571d7e612280605"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
